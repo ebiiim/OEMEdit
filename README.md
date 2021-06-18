@@ -7,7 +7,7 @@ Note: `Logo`, `Manufacturer`, `Model`, `SupportHours` and `SupportPhone` are [de
 
 A tool for doing this:
 
-![docs/system.png](https://raw.githubusercontent.com/ebiiim/oemedit/main/docs/system.bmp)
+![docs/system.png](https://raw.githubusercontent.com/ebiiim/oemedit/main/docs/system.png)
 
 ### How does the tool change OEM information?
 
