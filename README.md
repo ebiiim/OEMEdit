@@ -11,7 +11,7 @@ A tool for doing this:
 
 ### How does the tool change OEM information?
 
-Just editing a few registy values.
+Just editing a few registry values.
 
 ## Usage
 
