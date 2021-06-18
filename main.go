@@ -39,26 +39,31 @@ func setPCFromYAML(r io.Reader) error {
 	return nil
 }
 
-func main() {
+var (
+	version = "dev"
+)
 
-	usage := fmt.Sprintf("Usage:\n\t%s get|set\nSubcommands:\n\tget: get OEM information from registry and print it to stdout in YAML\n\tset: read OEM information from stdin in YAML and write it to registry (admin rights required)", os.Args[0])
+func main() {
+	usage := fmt.Sprintf("Usage:\n\t%s [command]\n\nCommands:\n\tget\tGets OEM information from registry and prints it to stdout in YAML\n\tset\tReads OEM information from stdin in YAML and writes it to registry (admin rights required)", os.Args[0])
+	usage += fmt.Sprintf("\n\nOEMEdit Version %s by ebiiim\n", version)
+	usage += "CLI tool for editing Windows OEM information\n"
 
 	if len(os.Args) == 1 {
-		fmt.Fprintf(os.Stderr, "%s", usage)
-		os.Exit(1)
+		fmt.Fprint(os.Stderr, usage)
+		os.Exit(64)
 	}
 
 	switch strings.ToLower(os.Args[1]) {
 	case "get":
 		y, err := getPCinYAML()
 		if err != nil {
-			log.Println(err)
+			log.Print(err)
 		}
 		fmt.Printf("%s", y)
 	case "set":
 		err := setPCFromYAML(os.Stdin)
 		if err != nil {
-			log.Println(err)
+			log.Print(err)
 		}
 	}
 }

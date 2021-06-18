@@ -1,0 +1,29 @@
+project_name: oemedit
+
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - binary: OEMEdit
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - windows
+    goarch:
+      - 386
+      - amd64
+    ldflags:
+      - -s -w
+      - -X main.version={{.Version}}
+
+archives:
+  - replacements:
+      386: i386
+      amd64: x86_64
+    format_overrides:
+      - goos: windows
+        format: zip
+
+release:
+  prerelease: auto
