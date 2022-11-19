@@ -1,5 +1,7 @@
 # OEMEdit: A CLI Tool for Editing Windows OEM Information
 
+ARCHIVED: The latest Windows 10 doesn't support this feature.
+
 Note: `Logo`, `Manufacturer`, `Model`, `SupportHours` and `SupportPhone` are [deprecated in Get Help app](https://docs.microsoft.com/en-us/windows-hardware/customize/desktop/unattend/microsoft-windows-shell-setup-oeminformation) but are still used in "System" control panel.
 
 
